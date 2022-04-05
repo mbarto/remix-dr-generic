@@ -1,4 +1,5 @@
 import { LinksFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 import homeStyleUrl from "~/styles/home.css"
 
@@ -13,27 +14,10 @@ export default function Index() {
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <Link to="here">Here</Link>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <Link to="here/nested">Nested</Link>
         </li>
       </ul>
     </div>
