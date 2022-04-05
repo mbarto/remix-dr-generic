@@ -1,5 +1,5 @@
 import { json, LoaderFunction } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 export type DataItem = {
     id: number
@@ -28,7 +28,7 @@ export default function Here() {
     return (
         <div>
         <h1>You are here!</h1>
-        <ul>{data?.items.map(i => <li key={i.id}>{i.name}</li>)}</ul>
+        <ul>{data?.items.map(i => <li key={i.id}><Link to={String(i.id)}>{i.name}</Link></li>)}</ul>
         <div>
             <Outlet/>
         </div>
