@@ -1,14 +1,14 @@
 import { json, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { Data } from "../here";
+import { Data } from "~/data/items";
 
 export const loader: LoaderFunction = ({context, request, params}) => {
     return json<Data>({
         items: [{
-            id: 1,
+            id: 3,
             name: "third item"
         }, {
-            id: 2,
+            id: 4,
             name: "fourth item"
         }]
     })

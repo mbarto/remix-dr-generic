@@ -1,24 +1,11 @@
 import { json, LoaderFunction } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Data, getAllItems } from "~/data/items";
 
-export type DataItem = {
-    id: number
-    name: string
-}
-
-export type Data = {
-    items: DataItem[]
-}
-
-export const loader: LoaderFunction = ({context, request, params}) => {
+export const loader: LoaderFunction = async ({ request }) => {
+    const items = await getAllItems(request)
     return json<Data>({
-        items: [{
-            id: 1,
-            name: "first item"
-        }, {
-            id: 2,
-            name: "second item"
-        }]
+        items
     })
 }
 
